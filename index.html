@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Information</title>
+    <link rel="stylesheet" href="./output.css" />
+  </head>
+  <body>
+    <nav class="bg-gray-950 py-10">
+      <section class="container mx-auto flex justify-around items-center">
+        <div class="text-white flex gap-3">
+          <img src="imgs/logo.png" alt="Website Logo" class="h-10" />
+          <div>
+            <h1 class="text-sm font-bold">Weather</h1>
+            <p class="text-xs">tagline Here</p>
+          </div>
+        </div>
+        <ul class="flex justify-between text-white w-[45%]">
+          <li>
+            <a
+              class="border-solid border py-2 px-5 text-blue-300 font-bold border-blue-300 rounded-lg"
+              href="#"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              class="hover:border-solid hover:border py-2 px-5 hover:text-blue-300 font-bold hover:border-blue-300 rounded-lg duration-100"
+              href="#"
+              >Live Cameras</a
+            >
+          </li>
+          <li>
+            <a
+              class="hover:border-solid hover:border py-2 px-5 hover:text-blue-300 font-bold hover:border-blue-300 rounded-lg duration-100"
+              href="#"
+              >Photos</a
+            >
+          </li>
+          <li>
+            <a
+              class="hover:border-solid hover:border py-2 px-5 hover:text-blue-300 font-bold hover:border-blue-300 rounded-lg duration-100"
+              href="#"
+              >News</a
+            >
+          </li>
+          <li>
+            <a
+              class="hover:border-solid hover:border py-2 px-5 hover:text-blue-300 font-bold hover:border-blue-300 rounded-lg duration-100"
+              href="#"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </section>
+    </nav>
+
+    <main id="mainSection">
+      <section
+        class="flex flex-col justify-center items-center py-14 container mx-auto"
+      >
+        <!--Input-->
+        <div
+          class="text-white flex gap-5 bg-gray-900 p-2 rounded-lg w-[100%] justify-between mb-8"
+        >
+          <input
+            class="focus:border-0 focus:outline-none py-3 px-6 bg-transparent w-full"
+            type="text"
+            id="searchInput"
+            name="location"
+            placeholder="Find Your location"
+          />
+          <button id="searchBtn" class="bg-blue-400 rounded-lg px-9 text-white">
+            Search
+          </button>
+        </div>
+        <!--DAta-->
+        <section
+          class="flex w-[100%] justify-between rounded-lg overflow-hidden text-white font-bold items-stretch"
+        >
+          <div id="toady" class="bg-[#323544] flex-1">
+            <div class="bg-[#2d303d] flex p-3 justify-between">
+              <h3 id="todayName"></h3>
+              <h3 id="toadyDate"></h3>
+            </div>
+
+            <div class="px-3 flex flex-col gap-4 py-8">
+              <h3 id="locationCity"></h3>
+              <h3 id="locationCountry"></h3>
+              <div class="flex items-center gap-5">
+                <h1 class="text-[90px]"><span id="toadyTemp"></span> °C</h1>
+                <img
+                  class="h-24"
+                  src="imgs/113.png"
+                  alt="sunny"
+                  id="todayIcon"
+                />
+              </div>
+              <h5 id="todayStatus" class="text-blue-300"></h5>
+              <div class="flex gap-5">
+                <div class="flex gap-3">
+                  <img
+                    src="imgs/icon-umberella.png"
+                    alt="possible Rain"
+                    class="h-6"
+                  />
+                  <span id="cloud"></span>
+                </div>
+                <div class="flex gap-2">
+                  <img
+                    src="imgs/icon-wind.png"
+                    alt="possible Rain"
+                    class="h-6"
+                  />
+                  <span id="wind"></span>
+                  <span class="uppercase">km/h</span>
+                </div>
+                <div class="flex gap-3">
+                  <img
+                    src="imgs/icon-compass.png"
+                    alt="possible Rain"
+                    class="h-6"
+                  />
+                  <span id="windDir"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="tomorrow" class="bg-[#262936] flex-1">
+            <div class="bg-[#222530] flex p-3 justify-center">
+              <h3 id="tomorrowName"></h3>
+            </div>
+
+            <div class="px-3 flex flex-col gap-2 py-8 items-center">
+              <img
+                src="imgs/113.png"
+                alt="tomorrowIcon"
+                id="tomorrowIcon"
+                class="h-16 w-16"
+              />
+              <h3><span id="tomorrowMaxTemp"></span> °C</h3>
+              <h6><span id="tomorrowMinTemp"></span> °C</h6>
+              <h6 id="tomorrowStatus" class="text-blue-300"></h6>
+            </div>
+          </div>
+
+          <div id="nextTomorrow" class="bg-[#323544] flex-1">
+            <div class="bg-[#2d303d] flex p-3 justify-center">
+              <h3 id="nTomorrowName"></h3>
+            </div>
+            <div class="px-3 flex flex-col gap-2 py-8 items-center">
+              <img
+                src="imgs/113.png"
+                alt="tomorrowIcon"
+                id="NtomorrowIcon"
+                class="h-16 w-16"
+              />
+              <h3><span id="NtomorrowMaxTemp"></span> °C</h3>
+              <h6><span id="NtomorrowMinTemp"></span> °C</h6>
+              <h6 id="NtomorrowStatus" class="text-blue-300"></h6>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="bg-[#262936] py-16">
+      <div class="container mx-auto flex items-center justify-center gap-4">
+        <div
+          class="flex gap-5 bg-gray-900 p-2 rounded-lg w-[40%] justify-between"
+        >
+          <input
+            class="focus:border-0 text-white focus:outline-none py-3 px-6 bg-transparent w-full"
+            type="text"
+            name="mail"
+            placeholder="Enter Your E-Mail To Subscribe"
+          />
+          <button class="bg-blue-400 rounded-lg px-9 text-white">
+            Subscribe
+          </button>
+        </div>
+        <div class="flex gap-3">
+          <i
+            class="fa-brands fa-lg text-[#009ad8] rounded-full fa-fw fa-facebook hover:text-white duration-75"
+          ></i>
+          <i
+            class="fa-brands fa-twitter hover:text-white duration-75 fa-brands fa-lg text-[#009ad8] rounded-full fa-fw"
+          ></i>
+          <i
+            class="fa-brands fa-instagram hover:text-white duration-75 fa-brands fa-lg text-[#009ad8] rounded-full fa-fw"
+          ></i>
+          <i
+            class="fa-brands fa-linkedin hover:text-white duration-75 fa-brands fa-lg text-[#009ad8] rounded-full fa-fw"
+          ></i>
+        </div>
+      </div>
+      <h3 class="text-center text-white py-3">
+        Copyright 2023. Designed by Karim ElGarhy. All rights reserved
+      </h3>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/609091b51d.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js"></script>
+  </body>
+</html>
