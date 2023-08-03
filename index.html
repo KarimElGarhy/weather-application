@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather Information</title>
-    <link rel="stylesheet" href="./output.css" />
+    <link rel="stylesheet" href="../dist/output.css" />
   </head>
   <body>
     <nav class="bg-gray-950 py-10">
@@ -16,7 +16,7 @@
             <p class="text-xs">tagline Here</p>
           </div>
         </div>
-        <ul class="flex justify-between text-white w-[45%]">
+        <ul class="hidden md:flex justify-between text-white w-[45%]">
           <li>
             <a
               class="border-solid border py-2 px-5 text-blue-300 font-bold border-blue-300 rounded-lg"
@@ -77,7 +77,7 @@
         </div>
         <!--DAta-->
         <section
-          class="flex w-[100%] justify-between rounded-lg overflow-hidden text-white font-bold items-stretch"
+          class="flex flex-col md:flex-row w-[100%] justify-between rounded-lg overflow-hidden text-white font-bold items-stretch"
         >
           <div id="toady" class="bg-[#323544] flex-1">
             <div class="bg-[#2d303d] flex p-3 justify-between">
@@ -167,9 +167,11 @@
     </main>
 
     <footer class="bg-[#262936] py-16">
-      <div class="container mx-auto flex items-center justify-center gap-4">
+      <div
+        class="container mx-auto flex flex-col md:flex-row items-center justify-center gap-4"
+      >
         <div
-          class="flex gap-5 bg-gray-900 p-2 rounded-lg w-[40%] justify-between"
+          class="flex flex-col md:flex-row gap-5 bg-gray-900 p-2 rounded-lg md:w-[40%] w-[100%] justify-between"
         >
           <input
             class="focus:border-0 text-white focus:outline-none py-3 px-6 bg-transparent w-full"
