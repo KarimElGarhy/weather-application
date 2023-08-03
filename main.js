@@ -39,8 +39,10 @@ userLocation()
 
 async function fetchData(searchLocation){
     const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=4862a588fa104c88873112313230208&q=${searchLocation}&days=3&aqi=no&alerts=no`);
-    myData = await response.json();
-    display()
+    if(response.ok == true){
+        myData = await response.json();
+        display()
+    }
 }
 
 searchInput.addEventListener("input",function(){
@@ -91,16 +93,15 @@ function display(){
 }
 
 
-async function userLocation(){
+function userLocation(){
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
           } else {
         console.log("Geolocation is not supported by this browser.");
       }
-      
-      async function showPosition(position) {
-        const userLocation = await fetch(`https://api-bdc.net/data/ip-geolocation?localityLanguage=en&key=bdc_c84f38f6cec94fcca534c0abc32edd3a`)
 
+      async function showPosition() {
+        const userLocation = await fetch(`https://api-bdc.net/data/ip-geolocation?localityLanguage=en&key=bdc_c84f38f6cec94fcca534c0abc32edd3a`)
         const currentLocation = await userLocation.json()
 
         searchLocation = currentLocation.location.city
